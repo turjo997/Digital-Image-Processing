@@ -2,8 +2,8 @@ I =  im2double(imread('Image1.jpg'));
 
 [row , col] = size(I);
 
-%figure;
-%imshow(I);
+figure;
+imshow(I);
 
 
 %%%%%%  LAPLACIAN FILTER %%%%%%%%%
@@ -35,11 +35,11 @@ end
 
 LaplaceEnhancedimg = (I - Laplaceimg);
 
-%figure;
-%imshow(Laplaceimg , []);
+figure;
+imshow(Laplaceimg , []);
 
-%figure;
-%imshow(LaplaceEnhancedimg );
+figure;
+imshow(LaplaceEnhancedimg );
     
     
 sx = [-1 0 1;
@@ -84,8 +84,8 @@ for i = 1 : row
 end
 
 
-%figure;
-%imshow(Sobel_image);
+figure;
+imshow(Sobel_image);
 
 %For boundary issues I use here zero padding
 Sobel_image1 = zeros(row+8);
@@ -109,21 +109,21 @@ for i = 1 : row
     end
 end
 
-%figure;
-%imshow(AVGimg);
+figure;
+imshow(AVGimg);
 
 
 productIMG = LaplaceEnhancedimg .* AVGimg ;  
 
-%figure;
-%imshow(productIMG);
+figure;
+imshow(productIMG);
 
 
 addIMG = I + productIMG ;
 
 
-%figure;
-%imshow(addIMG);
+figure;
+imshow(addIMG);
 
 
 c = 1;
@@ -137,8 +137,8 @@ for i = 1 : row
     end
 end
 
-%figure;
-%imshow(powerlawIMG);
+figure;
+imshow(powerlawIMG);
 
 figure;
 subplot(2, 4, 1); 
